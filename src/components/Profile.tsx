@@ -3,6 +3,7 @@ import { Avatar, Typography, Button, Divider, Box, Stack } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import TechnicalSkills from "./TechnicalSkills";
 
 interface Project {
   id: string;
@@ -44,7 +45,7 @@ const Profile: FC<ProfileProps> = ({
 
       <Divider sx={{ my: 2 }} />
 
-      <Typography variant="h6"></Typography>
+      <TechnicalSkills />
       <Button
         variant="outlined"
         href={resumeUrl}
@@ -84,10 +85,10 @@ const Profile: FC<ProfileProps> = ({
       <Divider sx={{ my: 2 }} />
 
       <Typography variant="h6">Connect with Me</Typography>
-      <Stack spacing={2} margin="auto`" alignItems="center" direction="row">
+      <Stack spacing={2} margin="auto" alignItems="center" direction="row">
         <Button
           variant="outlined"
-          href="https://www.linkedin.com/"
+          href="https://www.linkedin.com/in/steven-hulse/"
           target="_blank"
           rel="noopener noreferrer"
           startIcon={<LinkedInIcon />}
@@ -96,7 +97,7 @@ const Profile: FC<ProfileProps> = ({
         </Button>
         <Button
           variant="outlined"
-          href="https://github.com/"
+          href="https://github.com/Stevenhulse14"
           target="_blank"
           rel="noopener noreferrer"
           startIcon={<GitHubIcon sx={{ color: "black" }} />}
