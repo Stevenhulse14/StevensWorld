@@ -20,15 +20,20 @@ import {
   SiSqlite,
   SiCplusplus,
 } from "react-icons/si";
+import { FaJava, FaDatabase, FaBrain } from "react-icons/fa";
 import {
-  FaReact,
-  FaJava,
-  FaDocker,
-  FaPython,
-  FaHtml5,
-  FaCss3,
-  FaDatabase,
-} from "react-icons/fa";
+  FcAlarmClock,
+  FcAssistant,
+  FcBinoculars,
+  FcIdea,
+  FcLike,
+  FcMindMap,
+  FcOrganization,
+  FcReading,
+  FcSportsMode,
+  FcSupport,
+  FcVoicePresentation,
+} from "react-icons/fc";
 
 const TechnicalSkills = () => {
   const tools = [
@@ -45,7 +50,20 @@ const TechnicalSkills = () => {
     { name: "Heroku", icon: SiHeroku, color: "#430098" },
     { name: "Git", icon: SiGit, color: "#F05032" },
   ];
-
+  const qualitys = [
+    { name: "Hard Working", icon: FcSportsMode, color: "#FF6B6B" },
+    { name: "Communication", icon: FcVoicePresentation, color: "#6BD4FF" },
+    { name: "Teamwork", icon: FcOrganization, color: "#FFCE6B" },
+    { name: "Problem Solving", icon: FcSupport, color: "#6BFFB8" },
+    { name: "Creativity", icon: FcIdea, color: "#D46BFF" },
+    { name: "Adaptability", icon: FcMindMap, color: "#FFA46B" },
+    { name: "Time Management", icon: FcAlarmClock, color: "#6BFFD4" },
+    { name: "Leadership", icon: FcAssistant, color: "#FFA86B" },
+    { name: "Critical Thinking", icon: FaBrain, color: "#6B8EFF" },
+    { name: "Organization", icon: FcBinoculars, color: "#FF6B8E" },
+    { name: "Attention to Detail", icon: FcReading, color: "#6BFF91" },
+    { name: "Self Motivation", icon: FcLike, color: "#FFFFFF" },
+  ];
   const languages = [
     { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
     { name: "TypeScript", icon: SiTypescript, color: "#007ACC" },
@@ -75,42 +93,74 @@ const TechnicalSkills = () => {
   };
 
   return (
-    <Box>
+    <Box
+      flexDirection="column"
+      display="flex"
+      justifyContent="space-evenly"
+      alignItems="center"
+    >
       <Typography variant="h6">Technical Skills</Typography>
-
-      <Grid container spacing={4}>
-        <Grid item xs={6}>
-          <Typography variant="subtitle1">Tools</Typography>
-          <Grid container spacing={2}>
-            {tools.map((tool, index) => (
-              <Grid item xs={3} key={index} sx={gridItemStyle}>
-                <Paper elevation={3} sx={{ backgroundColor: tool.color }}>
-                  {React.createElement(tool.icon, { style: iconStyle })}
-                </Paper>
-                <Typography variant="body2" align="center">
-                  {tool.name}
-                </Typography>
-              </Grid>
-            ))}
+      <Box className="gridContainer">
+        <Grid container my={4} rowSpacing={2} spacing={4} marginLeft="0px">
+          <Grid item xs={4} className="Tools">
+            {/* <Typography variant="subtitle1">Tools</Typography> */}
+            <Grid container spacing={2} sx={{ margin: "auto" }}>
+              {tools.map((tool, index) => (
+                <Grid item xs={3} key={index} sx={gridItemStyle}>
+                  <Paper elevation={3} sx={{ backgroundColor: tool.color }}>
+                    {React.createElement(tool.icon, { style: iconStyle })}
+                  </Paper>
+                  <Typography
+                    variant="body2"
+                    align="center"
+                    sx={{ fontSize: "0.5rem", fontWeight: "900" }}
+                  >
+                    {tool.name}
+                  </Typography>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+          {/* <Typography variant="h6">Qualities</Typography> */}
+          <Grid item xs={4} className="Qualities">
+            <Grid container spacing={2} sx={{ margin: "auto" }}>
+              {qualitys.map((quality, index) => (
+                <Grid item xs={3} sx={gridItemStyle} key={index}>
+                  <Paper elevation={3} sx={{ backgroundColor: quality.color }}>
+                    {React.createElement(quality.icon, { style: iconStyle })}
+                  </Paper>
+                  <Typography
+                    variant="body2"
+                    align="center"
+                    sx={{ fontSize: "0.5rem", fontWeight: "900" }}
+                  >
+                    {quality.name}
+                  </Typography>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+          <Grid item xs={4} className="Language">
+            {/* <Typography variant="subtitle1">Languages</Typography> */}
+            <Grid container spacing={2} sx={{ margin: "auto" }}>
+              {languages.map((language, index) => (
+                <Grid item xs={3} key={index} sx={gridItemStyle}>
+                  <Paper elevation={3} sx={{ backgroundColor: language.color }}>
+                    {React.createElement(language.icon, { style: iconStyle })}
+                  </Paper>
+                  <Typography
+                    variant="body2"
+                    align="center"
+                    sx={{ fontSize: "0.5rem", fontWeight: "900" }}
+                  >
+                    {language.name}
+                  </Typography>
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
         </Grid>
-
-        <Grid item xs={6}>
-          <Typography variant="subtitle1">Languages</Typography>
-          <Grid container spacing={2}>
-            {languages.map((language, index) => (
-              <Grid item xs={3} key={index} sx={gridItemStyle}>
-                <Paper elevation={3} sx={{ backgroundColor: language.color }}>
-                  {React.createElement(language.icon, { style: iconStyle })}
-                </Paper>
-                <Typography variant="body2" align="center">
-                  {language.name}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-      </Grid>
+      </Box>
     </Box>
   );
 };
