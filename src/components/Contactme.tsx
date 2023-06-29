@@ -3,6 +3,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
+/**
+    * This component renders a list of buttons that link to my social media profiles.
+    - Todo add youtube link
+ */
 function Contactme() {
   return (
     <>
@@ -10,9 +14,7 @@ function Contactme() {
       <Stack
         spacing={2}
         direction={{ xs: "column", sm: "row" }}
-        // margin = "auto"
-        // alignContent = "center"
-        sx={{ margin: "auto", alignItems: "center" }}
+        sx={{ margin: "auto", alignItems: "center", justifyContent: "center" }}
       >
         <Button
           variant="outlined"

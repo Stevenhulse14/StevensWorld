@@ -103,7 +103,12 @@ const TechnicalSkills = () => {
       <Box className="gridContainer">
         <Grid container my={4} rowSpacing={2} spacing={4} marginLeft="0px">
           <Grid item xs={4} className="Tools">
-            {/* <Typography variant="subtitle1">Tools</Typography> */}
+            <Typography
+              variant="subtitle1"
+              sx={{ paddingRight: "30px", marginRight: "25px" }}
+            >
+              Tools
+            </Typography>
             <Grid container spacing={2} sx={{ margin: "auto" }}>
               {tools.map((tool, index) => (
                 <Grid item xs={3} key={index} sx={gridItemStyle}>
@@ -121,8 +126,14 @@ const TechnicalSkills = () => {
               ))}
             </Grid>
           </Grid>
-          {/* <Typography variant="h6">Qualities</Typography> */}
+
           <Grid item xs={4} className="Qualities">
+            <Typography
+              variant="subtitle1"
+              sx={{ paddingRight: "30px", marginRight: "25px" }}
+            >
+              Qualities
+            </Typography>
             <Grid container spacing={2} sx={{ margin: "auto" }}>
               {qualitys.map((quality, index) => (
                 <Grid item xs={3} sx={gridItemStyle} key={index}>
@@ -141,7 +152,12 @@ const TechnicalSkills = () => {
             </Grid>
           </Grid>
           <Grid item xs={4} className="Language">
-            {/* <Typography variant="subtitle1">Languages</Typography> */}
+            <Typography
+              variant="subtitle1"
+              sx={{ paddingRight: "30px", marginRight: "25px" }}
+            >
+              Languages
+            </Typography>
             <Grid container spacing={2} sx={{ margin: "auto" }}>
               {languages.map((language, index) => (
                 <Grid item xs={3} key={index} sx={gridItemStyle}>

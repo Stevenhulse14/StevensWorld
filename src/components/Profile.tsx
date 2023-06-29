@@ -1,7 +1,9 @@
-import React, { FC } from "react";
-import { Avatar, Typography, Button, Divider, Box, Stack } from "@mui/material";
+import { FC } from "react";
+import { Typography, Button, Divider, Box, Stack } from "@mui/material";
 import Contactme from "./Contactme";
+import Intro from "./Intro";
 import TechnicalSkills from "./TechnicalSkills";
+import Projects from "./Projects";
 
 interface Project {
   id: string;
@@ -20,27 +22,10 @@ interface ProfileProps {
   handleButtonClick: () => void;
 }
 
-const Profile: FC<ProfileProps> = ({
-  name,
-  bio,
-  avatarUrl,
-  resumeUrl,
-  projects,
-  handleButtonClick,
-}) => {
+const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
   return (
     <Box sx={{ border: 1, borderColor: "error" }}>
-      <Avatar
-        src={avatarUrl}
-        alt="Profile Picture"
-        sx={{ width: 100, height: 100 }}
-      />
-      <Typography variant="h5">{name}</Typography>
-      <Typography variant="body1">{bio}</Typography>
-      <Button variant="contained" onClick={handleButtonClick}>
-        Edit Profile
-      </Button>
-
+      <Intro name={name} bio={bio} avatarUrl={avatarUrl}></Intro>
       <Divider sx={{ my: 2 }} />
 
       <TechnicalSkills />
@@ -56,30 +41,7 @@ const Profile: FC<ProfileProps> = ({
       <Divider sx={{ my: 2 }} />
 
       <Typography variant="h6">PROJECTS</Typography>
-      {projects.map((project) => (
-        <div key={project.id}>
-          <Typography variant="subtitle1">{project.title}</Typography>
-          <Typography variant="body2">{project.description}</Typography>
-          <Button
-            variant="outlined"
-            href={project.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Demo
-          </Button>
-          <Button
-            variant="outlined"
-            href={project.codeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Code
-          </Button>
-          <Divider sx={{ my: 2 }} />
-        </div>
-      ))}
-
+      <Projects />
       <Divider sx={{ my: 2 }} />
       <Contactme />
     </Box>
@@ -87,3 +49,27 @@ const Profile: FC<ProfileProps> = ({
 };
 
 export default Profile;
+
+// {projects.map((project) => (
+//   <div key={project.id}>
+//     <Typography variant="subtitle1">{project.title}</Typography>
+//     <Typography variant="body2">{project.description}</Typography>
+//     <Button
+//       variant="outlined"
+//       href={project.demoUrl}
+//       target="_blank"
+//       rel="noopener noreferrer"
+//     >
+//       Demo
+//     </Button>
+//     <Button
+//       variant="outlined"
+//       href={project.codeUrl}
+//       target="_blank"
+//       rel="noopener noreferrer"
+//     >
+//       Code
+//     </Button>
+//     <Divider sx={{ my: 2 }} />
+//   </div>
+// ))}

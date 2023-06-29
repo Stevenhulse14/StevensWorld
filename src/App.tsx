@@ -3,7 +3,6 @@ import { Profile } from "./components";
 import "./App.css";
 
 function App() {
-  const handleEditProfile = () => "Hello";
   const data = [
     {
       id: 1,
@@ -21,7 +20,6 @@ function App() {
         avatarUrl="Profilepic.jpeg"
         resumeUrl="/path"
         projects={data}
-        handleButtonClick={handleEditProfile}
       />
     </>
   );
