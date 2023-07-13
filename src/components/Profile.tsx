@@ -1,5 +1,5 @@
 import { FC, useRef } from "react";
-import { Typography, Button, Divider, Box, Link } from "@mui/material";
+import { Typography, Button, Divider, Box, Stack } from "@mui/material";
 import Contactme from "./Contactme";
 import Intro from "./Intro";
 import TechnicalSkills from "./TechnicalSkills";
@@ -36,17 +36,34 @@ const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
   };
   return (
     <Box sx={{ border: 1, borderColor: "error" }}>
-      <Box>
-        <Button component="button" onClick={() => scrollToRef(tech)}>
+      <Stack
+        margin={2}
+        spacing={2}
+        direction={{ xs: "column", sm: "row" }}
+        sx={{ alignItems: "center", justifyContent: "center" }}
+      >
+        <Button
+          variant="outlined"
+          component="button"
+          onClick={() => scrollToRef(tech)}
+        >
           Tech
         </Button>
-        <Button component="button" onClick={() => scrollToRef(projects)}>
+        <Button
+          variant="outlined"
+          component="button"
+          onClick={() => scrollToRef(projects)}
+        >
           Projects
         </Button>
-        <Button component="button" onClick={() => scrollToRef(contact)}>
-          Contact Info
+        <Button
+          variant="outlined"
+          component="button"
+          onClick={() => scrollToRef(contact)}
+        >
+          Contact
         </Button>
-      </Box>
+      </Stack>
       <Intro name={name} bio={bio} avatarUrl={avatarUrl}></Intro>
       <Divider sx={{ my: 2 }} />
       <Typography ref={tech} variant="h6">
