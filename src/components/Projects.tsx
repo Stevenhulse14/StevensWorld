@@ -54,6 +54,18 @@ const cardData: CardData[] = [
     description: "Menu for a vegan restaurant",
     imageUrl: "https://example.com/image2.jpg",
   },
+  {
+    id: 7,
+    title: "Promptopia",
+    description: "A website that generates prompts for writers",
+    imageUrl: "https://example.com/image2.jpg",
+  },
+  {
+    id: 8,
+    title: "Weather Application",
+    description: "A weather application that uses the OpenWeather API",
+    imageUrl: "https://example.com/image2.jpg",
+  },
   // Add more card data objects here...
 ];
 

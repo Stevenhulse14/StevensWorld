@@ -19,6 +19,10 @@ import {
   SiCsharp,
   SiSqlite,
   SiCplusplus,
+  SiMongodb,
+  SiMui,
+  SiTailwindcss,
+  SiNextdotjs,
 } from "react-icons/si";
 import { FaJava, FaDatabase, FaBrain } from "react-icons/fa";
 import {
@@ -37,7 +41,6 @@ import {
 
 const TechnicalSkills = () => {
   const tools = [
-    { name: "Database", icon: FaDatabase, color: "#00758F" },
     { name: "React", icon: SiReact, color: "#61DAFB" },
     { name: "Redux", icon: SiRedux, color: "#764ABC" },
     { name: "Docker", icon: SiDocker, color: "#2496ED" },
@@ -49,6 +52,10 @@ const TechnicalSkills = () => {
     { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
     { name: "Heroku", icon: SiHeroku, color: "#430098" },
     { name: "Git", icon: SiGit, color: "#F05032" },
+    { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+    { name: "Material UI", icon: SiMui, color: "#0081CB" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38B2AC" },
+    { name: "NextJS", icon: SiNextdotjs, color: "#000000" },
   ];
   const qualitys = [
     { name: "Hard Working", icon: FcSportsMode, color: "#FF6B6B" },
@@ -99,7 +106,6 @@ const TechnicalSkills = () => {
       justifyContent="space-evenly"
       alignItems="center"
     >
-      <Typography variant="h6">Technical Skills</Typography>
       <Box className="gridContainer">
         <Grid container my={4} rowSpacing={2} spacing={4} marginLeft="0px">
           <Grid item xs={4} className="Tools">

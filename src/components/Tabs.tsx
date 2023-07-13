@@ -14,6 +14,8 @@ function TabsAbout() {
         color: "whitesmoke",
         paddingBottom: "20px",
         maxWidth: "100%",
+        display: "flex",
+        flexDirection: "row",
       }}
     >
       <Tabs

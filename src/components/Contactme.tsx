@@ -10,7 +10,6 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 function Contactme() {
   return (
     <>
-      <Typography variant="h6">Connect with Me</Typography>
       <Stack
         spacing={2}
         direction={{ xs: "column", sm: "row" }}

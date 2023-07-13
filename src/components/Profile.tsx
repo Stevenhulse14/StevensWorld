@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Typography, Button, Divider, Box, Stack } from "@mui/material";
+import { FC, useRef } from "react";
+import { Typography, Button, Divider, Box, Link } from "@mui/material";
 import Contactme from "./Contactme";
 import Intro from "./Intro";
 import TechnicalSkills from "./TechnicalSkills";
@@ -23,11 +23,35 @@ interface ProfileProps {
 }
 
 const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
+  const tech = useRef(null);
+  const projects = useRef(null);
+  const contact = useRef(null);
+
+  // This function is what I use to scroll to the ref of the section of this Portfolio Site
+  const scrollToRef = (ref: any) => {
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
   return (
     <Box sx={{ border: 1, borderColor: "error" }}>
+      <Box>
+        <Button component="button" onClick={() => scrollToRef(tech)}>
+          Tech
+        </Button>
+        <Button component="button" onClick={() => scrollToRef(projects)}>
+          Projects
+        </Button>
+        <Button component="button" onClick={() => scrollToRef(contact)}>
+          Contact Info
+        </Button>
+      </Box>
       <Intro name={name} bio={bio} avatarUrl={avatarUrl}></Intro>
       <Divider sx={{ my: 2 }} />
-
+      <Typography ref={tech} variant="h6">
+        Technical Skills
+      </Typography>
       <TechnicalSkills />
       <Button
         variant="outlined"
@@ -39,10 +63,14 @@ const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
       </Button>
 
       <Divider sx={{ my: 2 }} />
-
-      <Typography variant="h6">PROJECTS</Typography>
+      <Typography ref={projects} variant="h6">
+        PROJECTS
+      </Typography>
       <Projects />
       <Divider sx={{ my: 2 }} />
+      <Typography ref={contact} variant="h6">
+        Contact
+      </Typography>
       <Contactme />
     </Box>
   );
