@@ -62,8 +62,14 @@ const cardData: CardData[] = [
   },
   {
     id: 8,
-    title: "Weather Application",
+    title: "Weather App",
     description: "A weather application that uses the OpenWeather API",
+    imageUrl: "https://example.com/image2.jpg",
+  },
+  {
+    id: 9,
+    title: "WebResume",
+    description: "A website that displays my resume",
     imageUrl: "https://example.com/image2.jpg",
   },
   // Add more card data objects here...

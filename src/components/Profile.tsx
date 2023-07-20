@@ -40,7 +40,11 @@ const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
         margin={2}
         spacing={2}
         direction={{ xs: "column", sm: "row" }}
-        sx={{ alignItems: "center", justifyContent: "center" }}
+        sx={{
+          alignItems: "center",
+          justifyContent: "right",
+          paddingRight: "50px",
+        }}
       >
         <Button
           variant="outlined"
