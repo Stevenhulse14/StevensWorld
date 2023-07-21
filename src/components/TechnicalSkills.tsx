@@ -24,7 +24,7 @@ import {
   SiTailwindcss,
   SiNextdotjs,
 } from "react-icons/si";
-import { FaJava, FaDatabase, FaBrain } from "react-icons/fa";
+import { FaJava, FaBrain } from "react-icons/fa";
 import {
   FcAlarmClock,
   FcAssistant,
@@ -117,7 +117,7 @@ const TechnicalSkills = () => {
             </Typography>
             <Grid container spacing={2} sx={{ margin: "auto" }}>
               {tools.map((tool, index) => (
-                <Grid item xs={3} key={index} sx={gridItemStyle}>
+                <Grid item xs={6} sm={4} md={3} key={index} sx={gridItemStyle}>
                   <Paper elevation={3} sx={{ backgroundColor: tool.color }}>
                     {React.createElement(tool.icon, { style: iconStyle })}
                   </Paper>
@@ -142,7 +142,7 @@ const TechnicalSkills = () => {
             </Typography>
             <Grid container spacing={2} sx={{ margin: "auto" }}>
               {qualitys.map((quality, index) => (
-                <Grid item xs={3} sx={gridItemStyle} key={index}>
+                <Grid item xs={6} sm={4} md={3} sx={gridItemStyle} key={index}>
                   <Paper elevation={3} sx={{ backgroundColor: quality.color }}>
                     {React.createElement(quality.icon, { style: iconStyle })}
                   </Paper>
@@ -166,7 +166,7 @@ const TechnicalSkills = () => {
             </Typography>
             <Grid container spacing={2} sx={{ margin: "auto" }}>
               {languages.map((language, index) => (
-                <Grid item xs={3} key={index} sx={gridItemStyle}>
+                <Grid item xs={6} sm={4} md={3} key={index} sx={gridItemStyle}>
                   <Paper elevation={3} sx={{ backgroundColor: language.color }}>
                     {React.createElement(language.icon, { style: iconStyle })}
                   </Paper>

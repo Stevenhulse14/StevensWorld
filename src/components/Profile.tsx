@@ -1,5 +1,9 @@
 import { FC, useRef } from "react";
 import { Typography, Button, Divider, Box, Stack } from "@mui/material";
+import {
+  ArrowForward as ArrowForwardIcon,
+  Code as CodeIcon,
+} from "@mui/icons-material";
 import Contactme from "./Contactme";
 import Intro from "./Intro";
 import TechnicalSkills from "./TechnicalSkills";
@@ -21,8 +25,21 @@ interface ProfileProps {
   projects: Project[];
   handleButtonClick: () => void;
 }
+const buttonStyling = {
+  backgroundColor: "white",
+  color: "orange",
+  borderRadius: 5,
+  padding: "10px 20px",
+  transition: "background-color 0.2s",
+  boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+  "&:hover": {
+    backgroundColor: "lightblue", // Change to the shade of blue you prefer
+    color: "white",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+  },
+};
 
-const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
+const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
   const tech = useRef(null);
   const projects = useRef(null);
   const contact = useRef(null);
@@ -35,7 +52,7 @@ const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
     });
   };
   return (
-    <Box sx={{ border: 1, borderColor: "error" }}>
+    <Box>
       <Stack
         margin={2}
         spacing={2}
@@ -49,6 +66,8 @@ const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
         <Button
           variant="outlined"
           component="button"
+          sx={buttonStyling}
+          startIcon={<CodeIcon />}
           onClick={() => scrollToRef(tech)}
         >
           Tech
@@ -56,69 +75,32 @@ const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl, resumeUrl }) => {
         <Button
           variant="outlined"
           component="button"
+          endIcon={<ArrowForwardIcon />}
+          sx={buttonStyling}
           onClick={() => scrollToRef(projects)}
         >
           Projects
         </Button>
-        <Button
-          variant="outlined"
-          component="button"
-          onClick={() => scrollToRef(contact)}
-        >
-          Contact
-        </Button>
       </Stack>
       <Intro name={name} bio={bio} avatarUrl={avatarUrl}></Intro>
+      <Divider sx={{ my: 2 }} />
+      <Typography ref={contact} variant="h6">
+        Contact
+      </Typography>
+      <Contactme buttonStyling={buttonStyling} />
       <Divider sx={{ my: 2 }} />
       <Typography ref={tech} variant="h6">
         Technical Skills
       </Typography>
       <TechnicalSkills />
-      <Button
-        variant="outlined"
-        href={resumeUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View Resume
-      </Button>
 
       <Divider sx={{ my: 2 }} />
       <Typography ref={projects} variant="h6">
         PROJECTS
       </Typography>
-      <Projects />
-      <Divider sx={{ my: 2 }} />
-      <Typography ref={contact} variant="h6">
-        Contact
-      </Typography>
-      <Contactme />
+      <Projects buttonStyling={buttonStyling} />
     </Box>
   );
 };
 
 export default Profile;
-
-// {projects.map((project) => (
-//   <div key={project.id}>
-//     <Typography variant="subtitle1">{project.title}</Typography>
-//     <Typography variant="body2">{project.description}</Typography>
-//     <Button
-//       variant="outlined"
-//       href={project.demoUrl}
-//       target="_blank"
-//       rel="noopener noreferrer"
-//     >
-//       Demo
-//     </Button>
-//     <Button
-//       variant="outlined"
-//       href={project.codeUrl}
-//       target="_blank"
-//       rel="noopener noreferrer"
-//     >
-//       Code
-//     </Button>
-//     <Divider sx={{ my: 2 }} />
-//   </div>
-// ))}

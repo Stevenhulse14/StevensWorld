@@ -21,7 +21,7 @@ const Intro: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
         marginTop: "10px",
       }}
     >
-      <Grid item xs={5}>
+      <Grid item xs={6} sm={5}>
         <Box
           className="container1"
           sx={{
@@ -73,7 +73,7 @@ const Intro: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
           <Avatar
             src={avatarUrl}
             alt="Profile Picture"
-            sx={{ width: 200, height: 200 }}
+            sx={{ width: 150, height: 150 }}
           />
           <Divider sx={{ my: 2 }} />
           <Box
