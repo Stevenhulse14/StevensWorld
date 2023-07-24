@@ -22,8 +22,8 @@ const cardData: CardData[] = [
     description: "Ecommerce website for a selling pokemon cards",
     imageUrl:
       "https://res.cloudinary.com/dfyly0twx/image/upload/v1689872960/projectIcons/Goldengorillas.png",
-    githubUrl: "",
-    Demo: "",
+    githubUrl: "https://github.com/Golden-Gorillas/GraceShopper",
+    deployed: "",
     Youtube: "",
   },
   {
@@ -33,9 +33,9 @@ const cardData: CardData[] = [
       "Peer to peer playdate app where parents can connect, schedule playdates, and chat with other parents and their children.",
     imageUrl:
       "https://res.cloudinary.com/dfyly0twx/image/upload/v1689872931/projectIcons/Playdate.png",
-    githubUrl: "",
-    Demo: "",
-    Youtube: "",
+    githubUrl: "https://github.com/MASS-FSA/appPlayDate",
+    deployed: "",
+    Youtube: "https://www.youtube.com/watch?v=9w1VLtK23V4",
   },
   {
     id: 3,
@@ -43,8 +43,8 @@ const cardData: CardData[] = [
     description: "Is a blackjack game that I made using React.js",
     imageUrl:
       "https://res.cloudinary.com/dfyly0twx/image/upload/v1689876744/projectIcons/InWorks.png",
-    githubUrl: "",
-    Demo: "",
+    githubUrl: "https://github.com/Stevenhulse14/",
+    deployed: "",
     Youtube: "",
   },
   {
@@ -53,8 +53,8 @@ const cardData: CardData[] = [
     description: "Real estate website for a hotel",
     imageUrl:
       "https://res.cloudinary.com/dfyly0twx/image/upload/v1689876744/projectIcons/InWorks.png",
-    githubUrl: "",
-    Demo: "",
+    githubUrl: "https://github.com/Stevenhulse14/Westonhospitality",
+    deployed: "",
     Youtube: "",
   },
   {
@@ -64,8 +64,8 @@ const cardData: CardData[] = [
       "Cat API is a website that allows users to search for cat images and gifs.",
     imageUrl:
       "https://res.cloudinary.com/dfyly0twx/image/upload/v1689876744/projectIcons/InWorks.png",
-    githubUrl: "",
-    Demo: "",
+    githubUrl: "https://github.com/Stevenhulse14/",
+    deployed: "",
     Youtube: "",
   },
   {
@@ -74,8 +74,8 @@ const cardData: CardData[] = [
     description: "Menu for a vegan restaurant",
     imageUrl:
       "https://res.cloudinary.com/dfyly0twx/image/upload/v1689876744/projectIcons/InWorks.png",
-    githubUrl: "",
-    Demo: "",
+    githubUrl: "https://github.com/Stevenhulse14/",
+    deployed: "",
     Youtube: "",
   },
   {
@@ -84,8 +84,8 @@ const cardData: CardData[] = [
     description: "A website that generates prompts for writers",
     imageUrl:
       "https://res.cloudinary.com/dfyly0twx/image/upload/v1689872936/projectIcons/Promptopia.png",
-    githubUrl: "",
-    Demo: "",
+    githubUrl: "https://github.com/Stevenhulse14/Promptopia",
+    deployed: "https://promptopia-pied-three.vercel.app/",
     Youtube: "",
   },
   {
@@ -93,9 +93,9 @@ const cardData: CardData[] = [
     title: "Weather App",
     description: "A weather application that uses the OpenWeather API",
     imageUrl:
-      "https://res.cloudinary.com/dfyly0twx/image/upload/v1689876744/projectIcons/InWorks.png",
-    githubUrl: "",
-    Demo: "",
+      "https://res.cloudinary.com/dfyly0twx/image/upload/v1689972726/projectIcons/Weather.png",
+    githubUrl: "https://github.com/Stevenhulse14/Weather-app",
+    deployed: "https://magical-starship-452ab2.netlify.app/",
     Youtube: "",
   },
   {
@@ -104,9 +104,9 @@ const cardData: CardData[] = [
     description: "A website that displays my resume",
     imageUrl:
       "https://res.cloudinary.com/dfyly0twx/image/upload/v1689876744/projectIcons/InWorks.png",
-    githubUrl: "",
-    Demo: "",
-    Deployed: "",
+    githubUrl: "https://github.com/Stevenhulse14/",
+    deployed: "",
+    youtube: "",
   },
   // Add more card data objects here...
 ];
