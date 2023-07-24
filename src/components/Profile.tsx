@@ -27,7 +27,7 @@ interface ProfileProps {
 }
 const buttonStyling = {
   backgroundColor: "white",
-  color: "orange",
+  color: "#FF5722",
   borderRadius: 5,
   padding: "10px 20px",
   transition: "background-color 0.2s",

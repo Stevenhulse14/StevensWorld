@@ -2,6 +2,29 @@ import { FC } from "react";
 import { Avatar, Box, Typography, Divider, Grid } from "@mui/material";
 import TabsAbout from "./Tabs";
 
+import { createTheme } from "@mui/material";
+
+const theme = createTheme();
+
+const pulsingShadowAnimation = (theme) => {
+  const keyframes = {
+    "@keyframes pulsingShadowAnimation": {
+      "0%": {
+        boxShadow:
+          "0 0 10px 0px rgba(255, 200, 0, 0.5), 0 0 20px 0px rgba(255, 200, 0, 0.5), 0 0 30px 0px rgba(255, 200, 0, 0.5), 0 0 40px 0px rgba(255, 200, 0, 0.5)",
+      },
+      "50%": {
+        boxShadow:
+          "0 0 15px 0px rgba(255, 200, 0, 0.2), 0 0 25px 0px rgba(255, 200, 0, 0.2), 0 0 35px 0px rgba(255, 200, 0, 0.2), 0 0 45px 0px rgba(255, 200, 0, 0.2)",
+      },
+      "100%": {
+        boxShadow:
+          "0 0 10px 0px rgba(255, 200, 0, 0.5), 0 0 20px 0px rgba(255, 200, 0, 0.5), 0 0 30px 0px rgba(255, 200, 0, 0.5), 0 0 40px 0px rgba(255, 200, 0, 0.5)",
+      },
+    },
+  };
+  return keyframes;
+};
 interface ProfileProps {
   name: string;
   bio: string;
@@ -17,8 +40,14 @@ const Intro: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
-        flexDirection: "row",
+        flexDirection: {
+          xs: "column",
+          sm: "row",
+        },
         marginTop: "10px",
+        marginRight: {
+          sx: "0",
+        },
       }}
     >
       <Grid item xs={6} sm={5}>
@@ -73,7 +102,18 @@ const Intro: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
           <Avatar
             src={avatarUrl}
             alt="Profile Picture"
-            sx={{ width: 150, height: 150 }}
+            sx={{
+              width: "150px",
+              height: "150px",
+              boxSizing: "border-box",
+              border: "5px solid #FF5722",
+              borderRadius: "50%",
+              overflow: "hidden",
+              boxShadow: "0 5px 15px 0px rgba(0,0,0,0.6)",
+              transform: "translateY(0px)",
+              animation: `${pulsingShadowAnimation(theme)} 3s ease infinite`, // Apply the pulsing shadow animation
+              img: { width: "100%", height: "auto" },
+            }}
           />
           <Divider sx={{ my: 2 }} />
           <Box
@@ -92,12 +132,7 @@ const Intro: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
           </Typography>
         </Box>
       </Grid>
-      <Divider
-        orientation="vertical"
-        sx={{ backgroundColor: { sx: "#282c34" } }}
-        variant="middle"
-        flexItem
-      ></Divider>
+
       <Grid item xs={6}>
         <Box
           className="container2"
