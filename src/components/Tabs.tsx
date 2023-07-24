@@ -15,6 +15,7 @@ function TabsAbout() {
     "& .MuiTab-root": {
       fontSize: "0.7rem", // Adjust the font size of the tab label
       minWidth: "auto", // Allow smaller tabs (optional)
+      maxWidth: { sx: "100%", sm: 100 }, // Allow text to wrap (optional)
       padding: "6px 16px", // Adjust the padding to make the tabs more compact
       "&.Mui-selected": {
         backgroundColor: "orange",
@@ -38,6 +39,14 @@ function TabsAbout() {
         color: "orange",
       },
     },
+    "@media (max-width: 600px)": {
+      "& .MuiTabs-root": {
+        justifyContent: "center", // Center the tabs horizontally
+      },
+    },
+    "& .MuiTabs-flexContainer": {
+      width: "100%", // Set the width to 100% to prevent extending to the end
+    },
   };
   return (
     <Box
@@ -46,9 +55,9 @@ function TabsAbout() {
         paddingBottom: "20px",
         maxWidth: "100%",
         display: "flex",
-        flexDirection: "row",
-        xs: {
-          flexDirection: "column",
+        flexDirection: {
+          xs: "column",
+          sm: "row", // You can adjust the breakpoints here based on your needs
         },
       }}
     >
@@ -56,6 +65,9 @@ function TabsAbout() {
         value={tabIndex}
         onChange={handleTabChange}
         sx={tabStyling}
+        TabIndicatorProps={{
+          sx: { backgroundColor: "white", borderRadius: "30px" },
+        }} // Add this line to change the indicator color
         orientation={"vertical"}
       >
         <Tab
@@ -74,7 +86,9 @@ function TabsAbout() {
           sx={{ color: "whitesmoke", fontSize: "0.80rem" }}
         />
       </Tabs>
-      <Box sx={{ margin: 2, height: "90%", maxWidth: "50%" }}>
+      <Box
+        sx={{ margin: 2, height: "90%", maxWidth: { xs: "100%", sm: "50%" } }}
+      >
         {tabIndex === 0 && (
           <Box textAlign="center" alignContent="center" height="100%">
             <Typography alignContent="center" sx={{ fontSize: "0.80rem" }}>

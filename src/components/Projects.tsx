@@ -123,7 +123,7 @@ const Projects: React.FC = ({ buttonStyling }) => {
               width="100%"
               sx={{
                 objectFit: "contain",
-                backgroundColor: "##d7d7d7",
+                backgroundColor: "rgba(0, 0, 0, 0.87)",
               }}
               image={card.imageUrl}
               alt={card.title}

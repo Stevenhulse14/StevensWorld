@@ -106,7 +106,10 @@ const TechnicalSkills = () => {
       justifyContent="space-evenly"
       alignItems="center"
     >
-      <Box className="gridContainer">
+      <Box
+        className="gridContainer"
+        sx={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}
+      >
         <Grid container my={4} rowSpacing={2} spacing={4} marginLeft="0px">
           <Grid item xs={4} className="Tools">
             <Typography

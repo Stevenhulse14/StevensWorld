@@ -92,7 +92,12 @@ const Intro: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
           </Typography>
         </Box>
       </Grid>
-      <Divider orientation="vertical" variant="middle" flexItem />
+      <Divider
+        orientation="vertical"
+        sx={{ backgroundColor: { sx: "#282c34" } }}
+        variant="middle"
+        flexItem
+      ></Divider>
       <Grid item xs={6}>
         <Box
           className="container2"
@@ -105,10 +110,6 @@ const Intro: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
           }}
         >
           <TabsAbout />
-          {/* <Typography variant="h5">About Me</Typography>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography variant="body1">{bio}</Typography>
-        </Box> */}
         </Box>
       </Grid>
     </Grid>
