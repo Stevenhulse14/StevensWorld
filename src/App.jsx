@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Profile } from "./components";
 import "./App.css";
 

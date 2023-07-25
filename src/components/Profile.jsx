@@ -9,22 +9,6 @@ import Intro from "./Intro";
 import TechnicalSkills from "./TechnicalSkills";
 import Projects from "./Projects";
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  demoUrl: string;
-  codeUrl: string;
-}
-
-interface ProfileProps {
-  name: string;
-  bio: string;
-  avatarUrl: string;
-  resumeUrl: string;
-  projects: Project[];
-  handleButtonClick: () => void;
-}
 const buttonStyling = {
   backgroundColor: "white",
   color: "#FF5722",
@@ -39,13 +23,13 @@ const buttonStyling = {
   },
 };
 
-const Profile: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
+const Profile = ({ name, bio, avatarUrl }) => {
   const tech = useRef(null);
   const projects = useRef(null);
   const contact = useRef(null);
 
   // This function is what I use to scroll to the ref of the section of this Portfolio Site
-  const scrollToRef = (ref: any) => {
+  const scrollToRef = (ref) => {
     window.scrollTo({
       top: ref.current.offsetTop,
       behavior: "smooth",

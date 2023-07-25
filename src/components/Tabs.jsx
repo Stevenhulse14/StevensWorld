@@ -1,13 +1,13 @@
 import { Tab, Tabs, Box, Typography } from "@mui/material";
-import { SetStateAction, useEffect, useState } from "react";
+import { useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
-import WorkIcon from "@mui/icons-material/Work";
+
 import CodeIcon from "@mui/icons-material/Code";
 import MailIcon from "@mui/icons-material/Mail";
 function TabsAbout() {
   const [tabIndex, setTabIndex] = useState(0);
 
-  const handleTabChange = (event: any, newTabIndex: SetStateAction<number>) => {
+  const handleTabChange = (event, newTabIndex) => {
     //console.log(newTabIndex);
     setTabIndex(newTabIndex);
   };

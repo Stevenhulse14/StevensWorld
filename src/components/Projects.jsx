@@ -18,14 +18,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-interface CardData {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-}
-
-const cardData: CardData[] = [
+const cardData = [
   {
     id: 7,
     title: "Promptopia",
@@ -123,7 +116,7 @@ const cardData: CardData[] = [
   // Add more card data objects here...
 ];
 
-const Projects: React.FC = ({ buttonStyling }) => {
+const Projects = ({ buttonStyling }) => {
   const [expanded, setExpanded] = useState(false);
   const accordionStyle = {
     "& .MuiAccordionSummary-root": {

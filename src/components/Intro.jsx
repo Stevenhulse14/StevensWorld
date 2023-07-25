@@ -25,13 +25,8 @@ const pulsingShadowAnimation = (theme) => {
   };
   return keyframes;
 };
-interface ProfileProps {
-  name: string;
-  bio: string;
-  avatarUrl: string;
-}
 
-const Intro: FC<ProfileProps> = ({ name, bio, avatarUrl }) => {
+const Intro = ({ name, bio, avatarUrl }) => {
   return (
     <Grid
       container
